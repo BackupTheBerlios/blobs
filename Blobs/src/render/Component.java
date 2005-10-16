@@ -1,5 +1,5 @@
 /*
- * Created on 13 févr. 2005
+ * Created on 13 fvr. 2005
  *
  * TODO To change the template for this generated file go to
  * Window - Preferences - Java - Code Style - Code Templates
@@ -15,7 +15,7 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.glu.GLU.*;
 
 /**
- * @author Aurélie
+ * @author Aurlie
  *
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
@@ -72,10 +72,21 @@ public class Component extends util.Component
 		for (int i = 0; i < d.length; i++)
 		{
 			if (d[i].getWidth() == 640 && d[i].getHeight() == 480
-				&& d[i].getBitsPerPixel() == 32)
+				&& d[i].getBitsPerPixel() > 16)
 			{
-				displayMode = d[i];
-				break;
+				if(displayMode != null)
+				{
+					if(displayMode.getBitsPerPixel() < d[i].getBitsPerPixel())
+					{
+						displayMode = d[i];
+						break;
+					}
+				}
+				else
+				{
+					displayMode = d[i];
+					break;
+				}
 			}
 		}
 		Display.setDisplayMode(displayMode);
