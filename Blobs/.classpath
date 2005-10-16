@@ -2,11 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/kapouille/lwjgl-linux-0.98/jar/jinput.jar"/>
-	<classpathentry kind="lib" path="/home/kapouille/lwjgl-linux-0.98/jar/lwjgl.jar"/>
-	<classpathentry kind="lib" path="/home/kapouille/lwjgl-linux-0.98/jar/lwjgl_devil.jar"/>
-	<classpathentry kind="lib" path="/home/kapouille/lwjgl-linux-0.98/jar/lwjgl_fmod3.jar"/>
-	<classpathentry kind="lib" path="/home/kapouille/lwjgl-linux-0.98/jar/lwjgl_test.jar"/>
-	<classpathentry kind="lib" path="/home/kapouille/lwjgl-linux-0.98/jar/lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="jinput.jar"/>
+	<classpathentry kind="lib" path="lwjgl.jar"/>
+	<classpathentry kind="lib" path="lwjgl_devil.jar"/>
+	<classpathentry kind="lib" path="lwjgl_fmod3.jar"/>
+	<classpathentry kind="lib" path="lwjgl_test.jar"/>
+	<classpathentry kind="lib" path="lwjgl_util.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
