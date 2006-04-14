@@ -20,19 +20,17 @@ import static org.lwjgl.opengl.glu.GLU.*;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class Component extends util.Component
+public class RenderComponent extends util.Component
 {
-	private String windowTitle;
-	
-	private float rtri; // Angle For The Triangle ( NEW )
-	private float rquad; // Angle For The Quad ( NEW )
+	private float rtri; 
+	private float rquad;
 	
 	private boolean fullscreen=false;
 	private DisplayMode displayMode;
 
-	private main.Component mainComponent;
+	private main.MainComponent mainComponent;
 
-	public Component(main.Component main)
+	public RenderComponent(main.MainComponent main)
 	{
 		mainComponent=main;
 		

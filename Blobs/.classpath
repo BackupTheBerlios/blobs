@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="lwjgl_fmod3.jar"/>
 	<classpathentry kind="lib" path="lwjgl_test.jar"/>
 	<classpathentry kind="lib" path="lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="Ice.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

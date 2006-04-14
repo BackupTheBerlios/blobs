@@ -1,5 +1,5 @@
 /*
- * Created on 13 févr. 2005
+ * Created on 13 fvr. 2005
  *
  * TODO To change the template for this generated file go to
  * Window - Preferences - Java - Code Style - Code Templates
@@ -12,12 +12,12 @@ import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Keyboard;
 
 /**
- * @author Aurélie
+ * @author Aurlie
  *
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class Component extends util.Component
+public class InputComponent extends util.Component
 {
 	public interface Event
 	{
@@ -32,10 +32,10 @@ public class Component extends util.Component
 		void handle(Event event);
 	}
 	
-	main.Component mainComponent;
-	render.Component renderComponent;
+	main.MainComponent mainComponent;
+	render.RenderComponent renderComponent;
 	
-	public Component(main.Component main,render.Component render)
+	public InputComponent(main.MainComponent main,render.RenderComponent render)
 	{
 		mainComponent=main;
 		renderComponent=render;

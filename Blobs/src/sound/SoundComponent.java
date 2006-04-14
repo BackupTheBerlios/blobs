@@ -12,7 +12,7 @@ package sound;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class Component extends util.Component
+public class SoundComponent extends util.Component
 {
 	/* (non-Javadoc)
 	 * @see util.Component#initialise()

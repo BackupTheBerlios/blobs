@@ -1,22 +1,29 @@
 /*
- * Created on 13 févr. 2005
+ * Created on 13 fvr. 2005
  *
  * TODO To change the template for this generated file go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
 package main;
 
+import util.MessageQueue;
+import Ice.Application;
+
 /**
- * @author Aurélie
+ * @author Aurlie
  *
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class Component extends util.Component
+public class MainComponent extends Application
 {
-	render.Component renderComponent;
-	input.Component inputComponent;
-	sound.Component soundComponent;
+	render.RenderComponent renderComponent;
+	input.InputComponent inputComponent;
+	sound.SoundComponent soundComponent;
+	
+	public MessageQueue incomingMessageQ=new MessageQueue();
+	
+	boolean running=true;
 
 	private class halt implements util.MessageQueue.MessageHandler
 	{
@@ -37,7 +44,7 @@ public class Component extends util.Component
 	{
 		incomingMessageQ.bind(HaltMessage.class,new halt());
 		
-		renderComponent = new render.Component(this);
+		renderComponent = new render.RenderComponent(this);
 		
 		renderComponent.start();
 		
@@ -51,10 +58,10 @@ public class Component extends util.Component
 			e.printStackTrace();
 		}
 					
-		inputComponent=new input.Component(this, renderComponent);
+		inputComponent=new input.InputComponent(this, renderComponent);
 		inputComponent.start();
 		
-		soundComponent=new sound.Component();
+		soundComponent=new sound.SoundComponent();
 		soundComponent.start();
 	}
 
@@ -95,6 +102,25 @@ public class Component extends util.Component
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	final public void halt()
+	{
+		running=false;
+	}
+	
+	@Override
+	public int run(String[] arg0)
+	{
+		initialise();
+		
+		while (running)
+		{
+			update();
+		}
+		
+		cleanup();
+		return 0;
 	}
 
 }
